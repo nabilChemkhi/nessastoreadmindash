@@ -1,0 +1,83 @@
+<div class="bg-light min-vh-80 d-flex flex-row align-items-center">
+
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col lg="7" md="9" xl="6">
+        <c-card class="mx-4">
+          <c-card-body class="p-4">
+
+            <form cForm [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+              <h1>Register</h1>
+              <p class="text-medium-emphasis">Create your account For All User</p>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+<!--                <input  autoComplete="username" cFormControl placeholder="Username"  />-->
+<!--                [(ngModel)]="username"-->
+                <input cFormControl formControlName="username" name="username" type="text" class="form-control" placeholder="Username"
+                [ngClass]="{ 'is-valid': !isFieldValid('username'), 'is-invalid': isFieldValid('username') }">
+              </c-input-group>
+<!--              <div *ngIf="signUpForm.get('username')?.hasError('required') && signUpForm.get('username')?.touched" class="text-danger">-->
+<!--                Username is required-->
+<!--              </div>-->
+              <c-input-group class="mb-3">
+                <span cInputGroupText>&#64;</span>
+                <input autoComplete="email" cFormControl placeholder="Email" formControlName="email"/>
+              </c-input-group>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon  name="cilUser"></svg>
+                </span>
+                <input autoComplete="phone" cFormControl placeholder="Phone number" type="tel"  formControlName="phoneNumber"/>
+              </c-input-group>
+              <div class="mb-3">
+                <select aria-label="Role" cSelect class="mb-3" sizing="l" >
+                  <option hidden >Choose Role</option>
+                  <option value="admin">Admin</option>
+                  <option value="vendor">Vendor</option>
+                  <option value="client">Client</option>
+                </select>
+
+              </div>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" formControlName="password"/>
+              </c-input-group>
+              <c-input-group class="mb-4">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" formControlName="repeatPassword"/>
+              </c-input-group>
+
+<!--  <div class="mb-3">-->
+<!--    <label for="imageInput" class="form-label">Profile Picture</label>-->
+<!--    <input type="file" id="imageInput" (change)="onFileSelected($event)" class="form-control" accept="image/*">-->
+<!--    -->
+<!--    <div *ngIf="imagePreview" class="image-preview-container">-->
+<!--      <div class="remove-icon" (click)="removeImage()">-->
+<!--        <fa-icon class="fa-times" [icon]="faTimes"></fa-icon>-->
+<!--      </div>-->
+<!--      <img [src]="imagePreview" alt="Image Preview" class="circular-avatar">-->
+<!--    </div>-->
+<!--  </div>-->
+
+              <div class="d-grid">
+                <button cButton color="success" type="submit">Create Account</button>
+              </div>
+            </form>
+
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
+
+
+
+
+

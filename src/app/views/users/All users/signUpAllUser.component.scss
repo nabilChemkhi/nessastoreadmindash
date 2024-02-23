@@ -1,0 +1,41 @@
+.image-preview-container {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  
+  .remove-icon {
+    position: absolute;
+    top: 0;
+    right: 25%;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    .fa-times{
+        z-index: 2;
+        color: white;
+    }
+
+  }
+  
+  .circular-avatar {
+    max-width: 200px;
+    max-height: 200px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  

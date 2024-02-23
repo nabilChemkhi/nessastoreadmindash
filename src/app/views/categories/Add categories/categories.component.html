@@ -1,0 +1,40 @@
+<div class="bg-light min-vh-80 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col lg="7" md="9" xl="6">
+        <c-card class="mx-4">
+          <c-card-body class="p-4">
+            <form cForm>
+              <h1>Create new category</h1>
+              <p class="text-medium-emphasis">Create your category</p>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilUser"></svg>
+                </span>
+                <input [(ngModel)]="name" name="name" autoComplete="name" cFormControl placeholder="name" />
+              </c-input-group>
+         
+           
+  <div class="mb-3">
+    <label for="imageInput" class="form-label">Category image</label>
+    <input type="file" id="imageInput" (change)="onFileSelected($event)" class="form-control" accept="image/*">
+    
+    <div *ngIf="imagePreview" class="image-preview-container">
+      <div class="remove-icon" (click)="removeImage()">
+        <fa-icon class="fa-times" [icon]="faTimes"></fa-icon>
+      </div>
+      <img [src]="imagePreview" alt="Image Preview" class="circular-avatar">
+    </div>
+  </div>
+              
+              <div class="d-grid">
+               
+                <button cButton color="success" (click)="onSubmit()">Create category</button>
+              </div>
+            </form>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
